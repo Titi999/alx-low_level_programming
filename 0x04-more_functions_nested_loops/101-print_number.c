@@ -1,35 +1,27 @@
-#include "holberton.h"
-
+#include <stdio.h>
+#include <math.h>
 /**
-* print_number - prints # using _putchar function
-* @n: the integer to print
-*
-* Return: void
-*/
-void print_number(int n)
-{
-	int copy, nth, size = 1, ones = n % 10;
+ * main -  program that finds and prints the largest prime factor of a number
+ * Return: Always 0.
+ */
 
-	n /= 10;
-	copy = n;
-	if (ones < 0)
+int main(void)
+{
+	long int num = 612852475143;
+	int prime;
+
+	for (prime = 2; prime <= sqrt(num); prime++)
 	{
-		ones *= -1, copy *= -1, n *= -1;
-		_putchar('-');
-	}
-	if (copy > 0)
-	{
-		while (copy / 10 != 0)
+		/*int saved_prime;*/
+
+		if (num % prime == 0)
 		{
-			copy /= 10, size *= 10;
-		}
-		while (size > 0)
-		{
-			nth = n / size;
-			_putchar('0' + nth);
-			n -= nth * size;
-			size /= 10;
+			/*saved_prime = prime;*/
+			num = num / prime;
+			prime = 1;
+		/* printf("%ld\n", num);*/
 		}
 	}
-	_putchar('0' + ones);
+	printf("%ld\n", num);
+return (0);
 }
