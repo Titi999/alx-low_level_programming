@@ -1,16 +1,18 @@
+/*
+ * File: 3-puts.c
+ * Auth: Brennan D Baraban
+ */
+
 #include "holberton.h"
+
 /**
- * _puts - function that prints a string, followed by a new line
- * @str: declaration of *str and paramters for the function _puts
- * Return: Always 0.
+ * _puts - Prints a string to stdout.
+ * @str: The string to be printed.
  */
 void _puts(char *str)
 {
-	int c;
+	while (*str)
+		_putchar(*str++);
 
-	for (c = 0; str[c] != 0; c++)
-	{
-		_putchar(str[c]);
-	}
 	_putchar('\n');
 }
