@@ -1,18 +1,16 @@
 #include "holberton.h"
-#include <unistd.h>
 /**
- *_puts - prints a string, to stdout
- *@str: value to be evaluate.
- *Return: not.
+ * _puts - function that prints a string, followed by a new line
+ * @str: declaration of *str and paramters for the function _puts
+ * Return: Always 0.
  */
 void _puts(char *str)
 {
-	int l = 0;
+	int c;
 
-	while (*(str + l) != '\0')
+	for (c = 0; str[c] != 0; c++)
 	{
-		_putchar(str[l]);
-		l++;
+		_putchar(str[c]);
 	}
 	_putchar('\n');
 }
